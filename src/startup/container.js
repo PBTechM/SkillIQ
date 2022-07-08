@@ -18,15 +18,23 @@ const { TestRoutes } = require("../routes/index.routes");
 const Routes = require("../routes");
 //#endregion
 
-const container = createContainer();
+//#region Models
+const { User } = require("../models");
+//#endregion
 
-//#region Registers
+//#region Initialization
+const container = createContainer();
+//#endregion
+
+//#region Registers APP
 container.register({
   app: asClass(app).singleton(),
   router: asFunction(Routes).singleton(),
   config: asValue(config),
 });
+//#endregion
 
+//#region Registers Test
 container
   .register({
     TestService: asClass(TestService).singleton(),
@@ -37,5 +45,11 @@ container
   .register({
     TestRoutes: asFunction(TestRoutes).singleton(),
   });
+//#endregion
 
+//#region Registers Models
+container.register({
+  User: asValue(User),
+});
+//#endregion
 module.exports = container;
