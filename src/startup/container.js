@@ -19,7 +19,14 @@ const Routes = require("../routes");
 //#endregion
 
 //#region Models
-const { User } = require("../models");
+const {
+  Assessment,
+  Question,
+  Resource,
+  Tag,
+  Technology,
+  User,
+} = require("../models");
 //#endregion
 
 //#region Initialization
@@ -48,8 +55,24 @@ container
 //#endregion
 
 //#region Registers Models
-container.register({
-  User: asValue(User),
-});
+container
+  .register({
+    User: asValue(Assessment),
+  })
+  .register({
+    User: asValue(Question),
+  })
+  .register({
+    User: asValue(Resource),
+  })
+  .register({
+    User: asValue(Tag),
+  })
+  .register({
+    User: asValue(Technology),
+  })
+  .register({
+    User: asValue(User),
+  });
 //#endregion
 module.exports = container;
