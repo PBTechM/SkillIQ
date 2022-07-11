@@ -1,24 +1,24 @@
 const { createContainer, asClass, asValue, asFunction } = require("awilix");
 
-//#region Config
+//#region Config imports
 const config = require("../config");
 const app = require(".");
 //#endregion
 
-//#region Controllers
+//#region Controllers imports
 const { TestController } = require("../controllers/");
 //#endregion
 
-//#region Services
+//#region Services imports
 const { TestService } = require("../services/");
 //#endregion
 
-//#region Routes
+//#region Routes imports
 const { TestRoutes } = require("../routes/index.routes");
 const Routes = require("../routes");
 //#endregion
 
-//#region Models
+//#region Models imports
 const {
   Assessment,
   Question,
@@ -29,11 +29,22 @@ const {
 } = require("../models");
 //#endregion
 
+//#region Repositories imports
+const {
+  AssessmentRepository,
+  QuestionRepository,
+  ResourceRepository,
+  TagRepository,
+  TechnologyRepository,
+  UserRepository,
+} = require("../repositories");
+//#endregion
+
 //#region Initialization
 const container = createContainer();
 //#endregion
 
-//#region Registers APP
+//#region Register APP
 container.register({
   app: asClass(app).singleton(),
   router: asFunction(Routes).singleton(),
@@ -41,7 +52,7 @@ container.register({
 });
 //#endregion
 
-//#region Registers Test
+//#region Register Test
 container
   .register({
     TestService: asClass(TestService).singleton(),
@@ -54,7 +65,7 @@ container
   });
 //#endregion
 
-//#region Registers Models
+//#region Register Models
 container
   .register({
     User: asValue(Assessment),
@@ -75,4 +86,16 @@ container
     User: asValue(User),
   });
 //#endregion
+
+//#region Register Repositories
+container.register({
+  AssessmentRepository: asClass(AssessmentRepository).singleton(),
+  QuestionRepository: asClass(QuestionRepository).singleton(),
+  ResourceRepository: asClass(ResourceRepository).singleton(),
+  TagRepository: asClass(TagRepository).singleton(),
+  TechnologyRepository: asClass(TechnologyRepository).singleton(),
+  UserRepository: asClass(UserRepository).singleton(),
+});
+//#endregion
+
 module.exports = container;
