@@ -10,7 +10,15 @@ const { TestController } = require("../controllers/");
 //#endregion
 
 //#region Services imports
-const { TestService } = require("../services/");
+const {
+  TestService,
+  AssessmentService,
+  QuestionService,
+  ResourceService,
+  TagService,
+  TechnologyService,
+  UserService,
+} = require("../services/");
 //#endregion
 
 //#region Routes imports
@@ -63,6 +71,42 @@ container
   .register({
     TestRoutes: asFunction(TestRoutes).singleton(),
   });
+//#endregion
+
+//#region Register Assessment
+container.register({
+  AssessmentService: asClass(AssessmentService).singleton(),
+});
+//#endregion
+
+//#region Register Question
+container.register({
+  QuestionService: asClass(QuestionService).singleton(),
+});
+//#endregion
+
+//#region Register Resource
+container.register({
+  ResourceService: asClass(ResourceService).singleton(),
+});
+//#endregion
+
+//#region Register Tag
+container.register({
+  TagService: asClass(TagService).singleton(),
+});
+//#endregion
+
+//#region Register Technology
+container.register({
+  TechnologyService: asClass(TechnologyService).singleton(),
+});
+//#endregion
+
+//#region Register User
+container.register({
+  UserService: asClass(UserService).singleton(),
+});
 //#endregion
 
 //#region Register Models
