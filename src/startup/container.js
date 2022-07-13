@@ -13,6 +13,7 @@ const {
   TagController,
   TechnologyController,
   TestController,
+  UserController,
 } = require("../controllers/");
 //#endregion
 
@@ -131,9 +132,13 @@ container
 //#endregion
 
 //#region Register User
-container.register({
-  UserService: asClass(UserService).singleton(),
-});
+container
+  .register({
+    UserService: asClass(UserService).singleton(),
+  })
+  .register({
+    UserController: asClass(UserController).singleton(),
+  });
 //#endregion
 
 //#region Register Models

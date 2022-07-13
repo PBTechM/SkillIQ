@@ -4,6 +4,7 @@ const ResourceController = require("./resource.controller");
 const TagController = require("./tag.controller");
 const TechnologyController = require("./technology.controller");
 const TestController = require("./test.controller");
+const UserController = require("./user.controller");
 
 module.exports = {
   TestController: TestController,
@@ -11,5 +12,6 @@ module.exports = {
   QuestionController: QuestionController,
   ResourceController: ResourceController,
   TagController: TagController,
-  TechnologyController: TechnologyController
+  TechnologyController: TechnologyController,
+  UserController: UserController,
 };
