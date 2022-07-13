@@ -10,6 +10,7 @@ const {
   AssessmentController,
   QuestionController,
   ResourceController,
+  TagController,
   TestController,
 } = require("../controllers/");
 //#endregion
@@ -109,9 +110,13 @@ container
 //#endregion
 
 //#region Register Tag
-container.register({
-  TagService: asClass(TagService).singleton(),
-});
+container
+  .register({
+    TagService: asClass(TagService).singleton(),
+  })
+  .register({
+    TagController: asClass(TagController).singleton(),
+  });
 //#endregion
 
 //#region Register Technology
