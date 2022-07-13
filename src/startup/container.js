@@ -9,6 +9,7 @@ const app = require(".");
 const {
   AssessmentController,
   QuestionController,
+  ResourceController,
   TestController,
 } = require("../controllers/");
 //#endregion
@@ -98,9 +99,13 @@ container
 //#endregion
 
 //#region Register Resource
-container.register({
-  ResourceService: asClass(ResourceService).singleton(),
-});
+container
+  .register({
+    ResourceService: asClass(ResourceService).singleton(),
+  })
+  .register({
+    ResourceController: asClass(ResourceController).singleton(),
+  });
 //#endregion
 
 //#region Register Tag
