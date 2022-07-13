@@ -11,6 +11,7 @@ const {
   QuestionController,
   ResourceController,
   TagController,
+  TechnologyController,
   TestController,
 } = require("../controllers/");
 //#endregion
@@ -120,9 +121,13 @@ container
 //#endregion
 
 //#region Register Technology
-container.register({
-  TechnologyService: asClass(TechnologyService).singleton(),
-});
+container
+  .register({
+    TechnologyService: asClass(TechnologyService).singleton(),
+  })
+  .register({
+    TechnologyController: asClass(TechnologyController).singleton(),
+  });
 //#endregion
 
 //#region Register User
