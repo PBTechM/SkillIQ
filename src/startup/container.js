@@ -6,7 +6,11 @@ const app = require(".");
 //#endregion
 
 //#region Controllers imports
-const { AssessmentController, TestController } = require("../controllers/");
+const {
+  AssessmentController,
+  QuestionController,
+  TestController,
+} = require("../controllers/");
 //#endregion
 
 //#region Services imports
@@ -84,9 +88,13 @@ container
 //#endregion
 
 //#region Register Question
-container.register({
-  QuestionService: asClass(QuestionService).singleton(),
-});
+container
+  .register({
+    QuestionService: asClass(QuestionService).singleton(),
+  })
+  .register({
+    QuestionController: asClass(QuestionController).singleton(),
+  });
 //#endregion
 
 //#region Register Resource
