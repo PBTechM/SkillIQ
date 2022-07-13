@@ -12,8 +12,8 @@ class TechnologyController {
   }
 
   async getAll(_, res) {
-    const technology = await _service.getAll();
-    return res.send(technology);
+    const technologies = await _service.getAll();
+    return res.send(technologies);
   }
 
   async create(req, res) {
