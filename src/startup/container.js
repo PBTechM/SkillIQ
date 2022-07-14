@@ -170,19 +170,19 @@ container
 //#region Register Models
 container
   .register({
-    User: asValue(Assessment),
+    Assessment: asValue(Assessment),
   })
   .register({
-    User: asValue(Question),
+    Question: asValue(Question),
   })
   .register({
-    User: asValue(Resource),
+    Resource: asValue(Resource),
   })
   .register({
-    User: asValue(Tag),
+    Tag: asValue(Tag),
   })
   .register({
-    User: asValue(Technology),
+    Technology: asValue(Technology),
   })
   .register({
     User: asValue(User),
