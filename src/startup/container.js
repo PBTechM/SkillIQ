@@ -34,6 +34,7 @@ const {
   AssessmentRoutes,
   QuestionRoutes,
   ResourceRoutes,
+  TagRoutes,
   TestRoutes,
 } = require("../routes/index.routes");
 const Routes = require("../routes");
@@ -132,6 +133,9 @@ container
   })
   .register({
     TagController: asClass(TagController).singleton(),
+  })
+  .register({
+    TagRoutes: asFunction(TagRoutes).singleton(),
   });
 //#endregion
 

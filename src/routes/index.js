@@ -5,7 +5,13 @@ const compression = require("compression");
 const { ErrorMiddleware, NotFoundMiddleware } = require("../middlewares");
 require("express-async-errors");
 
-module.exports = ({ TestRoutes, AssessmentRoutes, QuestionRoutes, ResourceRoutes }) => {
+module.exports = ({
+  TestRoutes,
+  AssessmentRoutes,
+  QuestionRoutes,
+  ResourceRoutes,
+  TagRoutes,
+}) => {
   const router = express.Router();
   const apiRoutes = express.Router();
 
@@ -15,6 +21,7 @@ module.exports = ({ TestRoutes, AssessmentRoutes, QuestionRoutes, ResourceRoutes
   apiRoutes.use("/assessment", AssessmentRoutes);
   apiRoutes.use("/question", QuestionRoutes);
   apiRoutes.use("/resource", ResourceRoutes);
+  apiRoutes.use("/tag", TagRoutes);
 
   router.use("/v1/api", apiRoutes);
 
