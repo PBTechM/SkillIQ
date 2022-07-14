@@ -30,7 +30,7 @@ const {
 //#endregion
 
 //#region Routes imports
-const { TestRoutes } = require("../routes/index.routes");
+const { TestRoutes, AssessmentRoutes } = require("../routes/index.routes");
 const Routes = require("../routes");
 //#endregion
 
@@ -88,6 +88,9 @@ container
   })
   .register({
     AssessmentController: asClass(AssessmentController).singleton(),
+  })
+  .register({
+    AssessmentRoutes: asFunction(AssessmentRoutes).singleton(),
   });
 //#endregion
 
