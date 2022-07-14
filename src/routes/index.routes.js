@@ -5,4 +5,5 @@ module.exports = {
   ResourceRoutes: require("./resource.routes"),
   TagRoutes: require("./tag.routes"),
   TechnologyRoutes: require("./technology.routes"),
+  UserRoutes: require("./user.routes"),
 };

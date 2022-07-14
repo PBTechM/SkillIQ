@@ -37,6 +37,7 @@ const {
   TagRoutes,
   TechnologyRoutes,
   TestRoutes,
+  UserRoutes,
 } = require("../routes/index.routes");
 const Routes = require("../routes");
 //#endregion
@@ -160,6 +161,9 @@ container
   })
   .register({
     UserController: asClass(UserController).singleton(),
+  })
+  .register({
+    UserRoutes: asFunction(UserRoutes).singleton(),
   });
 //#endregion
 
