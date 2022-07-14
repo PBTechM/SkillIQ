@@ -33,6 +33,7 @@ const {
 const {
   AssessmentRoutes,
   QuestionRoutes,
+  ResourceRoutes,
   TestRoutes,
 } = require("../routes/index.routes");
 const Routes = require("../routes");
@@ -118,6 +119,9 @@ container
   })
   .register({
     ResourceController: asClass(ResourceController).singleton(),
+  })
+  .register({
+    ResourceRoutes: asFunction(ResourceRoutes).singleton(),
   });
 //#endregion
 
