@@ -10,6 +10,7 @@ module.exports = ({
   AssessmentRoutes,
   QuestionRoutes,
   ResourceRoutes,
+  TechnologyRoutes,
   TagRoutes,
 }) => {
   const router = express.Router();
@@ -22,6 +23,7 @@ module.exports = ({
   apiRoutes.use("/question", QuestionRoutes);
   apiRoutes.use("/resource", ResourceRoutes);
   apiRoutes.use("/tag", TagRoutes);
+  apiRoutes.use("/technology", TechnologyRoutes);
 
   router.use("/v1/api", apiRoutes);
 

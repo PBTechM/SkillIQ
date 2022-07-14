@@ -4,4 +4,5 @@ module.exports = {
   QuestionRoutes: require("./question.routes"),
   ResourceRoutes: require("./resource.routes"),
   TagRoutes: require("./tag.routes"),
+  TechnologyRoutes: require("./technology.routes"),
 };

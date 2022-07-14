@@ -35,6 +35,7 @@ const {
   QuestionRoutes,
   ResourceRoutes,
   TagRoutes,
+  TechnologyRoutes,
   TestRoutes,
 } = require("../routes/index.routes");
 const Routes = require("../routes");
@@ -146,6 +147,9 @@ container
   })
   .register({
     TechnologyController: asClass(TechnologyController).singleton(),
+  })
+  .register({
+    TechnologyRoutes: asFunction(TechnologyRoutes).singleton(),
   });
 //#endregion
 
