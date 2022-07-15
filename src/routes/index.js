@@ -8,11 +8,12 @@ require("express-async-errors");
 module.exports = ({
   TestRoutes,
   AssessmentRoutes,
+  AuthRoutes,
   QuestionRoutes,
   ResourceRoutes,
   TagRoutes,
   TechnologyRoutes,
-  UserRoutes
+  UserRoutes,
 }) => {
   const router = express.Router();
   const apiRoutes = express.Router();
@@ -21,6 +22,7 @@ module.exports = ({
 
   apiRoutes.use("/test", TestRoutes);
   apiRoutes.use("/assessment", AssessmentRoutes);
+  apiRoutes.use("/auth", AuthRoutes);
   apiRoutes.use("/question", QuestionRoutes);
   apiRoutes.use("/resource", ResourceRoutes);
   apiRoutes.use("/tag", TagRoutes);

@@ -8,6 +8,7 @@ const app = require(".");
 //#region Controllers imports
 const {
   AssessmentController,
+  AuthController,
   QuestionController,
   ResourceController,
   TagController,
@@ -21,6 +22,7 @@ const {
 const {
   TestService,
   AssessmentService,
+  AuthService,
   QuestionService,
   ResourceService,
   TagService,
@@ -32,6 +34,7 @@ const {
 //#region Routes imports
 const {
   AssessmentRoutes,
+  AuthRoutes,
   QuestionRoutes,
   ResourceRoutes,
   TagRoutes,
@@ -99,6 +102,19 @@ container
   })
   .register({
     AssessmentRoutes: asFunction(AssessmentRoutes).singleton(),
+  });
+//#endregion
+
+//#region Register Auth
+container
+  .register({
+    AuthService: asClass(AuthService).singleton(),
+  })
+  .register({
+    AuthController: asClass(AuthController).singleton(),
+  })
+  .register({
+    AuthRoutes: asFunction(AuthRoutes).singleton(),
   });
 //#endregion
 

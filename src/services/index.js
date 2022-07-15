@@ -1,4 +1,5 @@
 const AssessmentService = require("./assessment.service");
+const AuthService = require("./auth.service");
 const QuestionService = require("./question.service");
 const ResourceService = require("./resource.service");
 const TagService = require("./tag.service");
@@ -14,4 +15,5 @@ module.exports = {
   TagService: TagService,
   TechnologyService: TechnologyService,
   UserService: UserService,
+  AuthService: AuthService,
 };
