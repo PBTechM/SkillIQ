@@ -7,7 +7,11 @@ class BaseRepository {
     return await this.model.findById(id);
   }
 
-  async getAll() {
+  async getAll(pageSize = 0, pageNum = 0) {
+    if (pageSize && pageNum) {
+      const skips = pageSize * (pageNum - 1);
+      return await this.model.find().skip(skips).limit(pageSize);
+    }
     return await this.model.find();
   }
 

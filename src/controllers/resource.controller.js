@@ -11,8 +11,9 @@ class ResourceController {
     return res.send(resource);
   }
 
-  async getAll(_, res) {
-    const resources = await _service.getAll();
+  async getAll(req, res) {
+    const { pageSize, pageNum } = req.query;
+    const resources = await _service.getAll(pageSize, pageNum);
     return res.send(resources);
   }
 

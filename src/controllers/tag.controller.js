@@ -11,8 +11,9 @@ class TagController {
     return res.send(tag);
   }
 
-  async getAll(_, res) {
-    const tags = await _service.getAll();
+  async getAll(req, res) {
+    const { pageSize, pageNum } = req.query;
+    const tags = await _service.getAll(pageSize, pageNum);
     return res.send(tags);
   }
 

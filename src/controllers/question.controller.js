@@ -11,8 +11,9 @@ class QuestionController {
     return res.send(question);
   }
 
-  async getAll(_, res) {
-    const questions = await _service.getAll();
+  async getAll(req, res) {
+    const { pageSize, pageNum } = req.query;
+    const questions = await _service.getAll(pageSize, pageNum);
     return res.send(questions);
   }
 

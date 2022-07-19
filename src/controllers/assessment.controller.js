@@ -11,8 +11,9 @@ class AssessmentController {
     return res.send(assessment);
   }
 
-  async getAll(_, res) {
-    const assessments = await _service.getAll();
+  async getAll(req, res) {
+    const { pageSize, pageNum } = req.query;
+    const assessments = await _service.getAll(pageSize, pageNum);
     return res.send(assessments);
   }
 

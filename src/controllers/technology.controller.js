@@ -11,8 +11,9 @@ class TechnologyController {
     return res.send(technology);
   }
 
-  async getAll(_, res) {
-    const technologies = await _service.getAll();
+  async getAll(req, res) {
+    const { pageSize, pageNum } = req.query;
+    const technologies = await _service.getAll(pageSize, pageNum);
     return res.send(technologies);
   }
 
