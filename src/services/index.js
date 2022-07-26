@@ -1,5 +1,6 @@
 const AssessmentService = require("./assessment.service");
 const AuthService = require("./auth.service");
+const CacheService = require("./cache.service");
 const QuestionService = require("./question.service");
 const ResourceService = require("./resource.service");
 const TagService = require("./tag.service");
@@ -10,6 +11,7 @@ const UserService = require("./user.service");
 module.exports = {
   TestService: TestService,
   AssessmentService: AssessmentService,
+  CacheService: CacheService,
   QuestionService: QuestionService,
   ResourceService: ResourceService,
   TagService: TagService,

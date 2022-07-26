@@ -23,6 +23,7 @@ const {
   TestService,
   AssessmentService,
   AuthService,
+  CacheService,
   QuestionService,
   ResourceService,
   TagService,
@@ -76,6 +77,7 @@ container.register({
   app: asClass(app).singleton(),
   router: asFunction(Routes).singleton(),
   config: asValue(config),
+  cache: asClass(CacheService).singleton(),
 });
 //#endregion
 
